@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="jpa@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="jpa">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="assign"/>
+    <schema id="4" parent="1" name="assignment"/>
+    <schema id="5" parent="1" name="c1"/>
+    <schema id="6" parent="1" name="class"/>
+    <schema id="7" parent="1" name="company"/>
+    <schema id="8" parent="1" name="dbms2"/>
+    <schema id="9" parent="1" name="exam2017"/>
+    <schema id="10" parent="1" name="gdse41"/>
+    <schema id="11" parent="1" name="ijse"/>
+    <schema id="12" parent="1" name="indexing"/>
+    <schema id="13" parent="1" name="information_schema"/>
+    <schema id="14" parent="1" name="item"/>
+    <schema id="15" parent="1" name="mysql"/>
+    <schema id="16" parent="1" name="oshan"/>
+    <schema id="17" parent="1" name="performance_schema"/>
+    <schema id="18" parent="1" name="phonebook"/>
+    <schema id="19" parent="1" name="phpdb"/>
+    <schema id="20" parent="1" name="sakila"/>
+    <schema id="21" parent="1" name="sem1pro"/>
+    <schema id="22" parent="1" name="sem2pro"/>
+    <schema id="23" parent="1" name="sys"/>
+    <schema id="24" parent="1" name="test"/>
+    <schema id="25" parent="1" name="thogakade"/>
+    <schema id="26" parent="1" name="thogakadecustomized"/>
+    <schema id="27" parent="1" name="world"/>
+    <table id="28" parent="2" name="customer"/>
+    <table id="29" parent="2" name="customer_orders"/>
+    <table id="30" parent="2" name="guardian"/>
+    <table id="31" parent="2" name="orders"/>
+    <table id="32" parent="2" name="student"/>
+    <column id="33" parent="28" name="cid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="34" parent="28" name="contact">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="35" parent="28" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="36" parent="28" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>cid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="37" parent="29" name="Customer_cid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="29" name="ordersList_oid">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="39" parent="29" name="FKclixl3wii1soj7ig8dpj850d4">
+      <ColNames>Customer_cid</ColNames>
+    </index>
+    <index id="40" parent="29" name="UK_qvsx31sqviree4a2pv61tebea">
+      <ColNames>ordersList_oid</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="41" parent="29" name="UK_qvsx31sqviree4a2pv61tebea">
+      <ColNames>ordersList_oid</ColNames>
+      <UnderlyingIndexName>UK_qvsx31sqviree4a2pv61tebea</UnderlyingIndexName>
+    </key>
+    <foreign-key id="42" parent="29" name="FKclixl3wii1soj7ig8dpj850d4">
+      <ColNames>Customer_cid</ColNames>
+      <RefSchemaName>jpa</RefSchemaName>
+      <RefTableName>customer</RefTableName>
+      <RefColNames>cid</RefColNames>
+    </foreign-key>
+    <foreign-key id="43" parent="29" name="FKnmkn63hnrk51kxlsm8d8vksee">
+      <ColNames>ordersList_oid</ColNames>
+      <RefSchemaName>jpa</RefSchemaName>
+      <RefTableName>orders</RefTableName>
+      <RefColNames>oid</RefColNames>
+    </foreign-key>
+    <column id="44" parent="30" name="gid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="45" parent="30" name="address">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="46" parent="30" name="contact">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="47" parent="30" name="gender">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="48" parent="30" name="name">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="49" parent="30" name="nic">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="50" parent="30" name="student_sid">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="51" parent="30" name="FKmvtts63l5t00ghs0s77x38jo4">
+      <ColNames>student_sid</ColNames>
+    </index>
+    <key id="52" parent="30" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>gid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="53" parent="30" name="FKmvtts63l5t00ghs0s77x38jo4">
+      <ColNames>student_sid</ColNames>
+      <RefSchemaName>jpa</RefSchemaName>
+      <RefTableName>student</RefTableName>
+      <RefColNames>sid</RefColNames>
+    </foreign-key>
+    <column id="54" parent="31" name="oid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="55" parent="31" name="oDate">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="56" parent="31" name="priority">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="57" parent="31" name="customer_cid">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="58" parent="31" name="FK6hx7nxqoml3ffj19qp7a5c9wu">
+      <ColNames>customer_cid</ColNames>
+    </index>
+    <key id="59" parent="31" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>oid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="60" parent="31" name="FK6hx7nxqoml3ffj19qp7a5c9wu">
+      <ColNames>customer_cid</ColNames>
+      <RefSchemaName>jpa</RefSchemaName>
+      <RefTableName>customer</RefTableName>
+      <RefColNames>cid</RefColNames>
+    </foreign-key>
+    <column id="61" parent="32" name="sid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="62" parent="32" name="address">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="63" parent="32" name="contact">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="64" parent="32" name="gender">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="65" parent="32" name="name">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="66" parent="32" name="nic">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="67" parent="32" name="guardian_gid">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="68" parent="32" name="studentName">
+      <Position>8</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <index id="69" parent="32" name="FK3jj57tfv1714njyah216lmhg3">
+      <ColNames>guardian_gid</ColNames>
+    </index>
+    <key id="70" parent="32" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>sid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="71" parent="32" name="FK3jj57tfv1714njyah216lmhg3">
+      <ColNames>guardian_gid</ColNames>
+      <RefSchemaName>jpa</RefSchemaName>
+      <RefTableName>guardian</RefTableName>
+      <RefColNames>gid</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
